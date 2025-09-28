@@ -12,14 +12,14 @@ Express의 다양한 라우팅 방법을 학습하고 실습해보겠습니다! 
 ## 📋 TODO 체크리스트
 
 ### 1단계: 이전 단계 완료 확인
-- [ ] 02-start-express-server가 완료되어 기본 서버가 동작하는지 확인
-- [ ] nodemon이 설치되어 있고 `npm run dev` 명령이 동작하는지 확인
+- [x] 02-start-express-server가 완료되어 기본 서버가 동작하는지 확인
+- [x] nodemon이 설치되어 있고 `npm run dev` 명령이 동작하는지 확인
 
 ### 2단계: 기본 라우팅 구현
 
 기존 `src/server.js` 파일에 다양한 HTTP 메서드 라우트를 추가해보세요:
 
-- [ ] **GET 라우트** - 사용자 목록 조회:
+- [x] **GET 라우트** - 사용자 목록 조회:
 ```javascript
 // 기본 HTTP 메서드
 app.get('/users', (req, res) => {
@@ -27,7 +27,7 @@ app.get('/users', (req, res) => {
 });
 ```
 
-- [ ] **POST 라우트** - 사용자 생성:
+- [x] **POST 라우트** - 사용자 생성:
 ```javascript
 // postman에서 테스트 시 Header -> Content-Type을 application/json으로 설정
 app.post('/users', (req, res) => {
@@ -36,14 +36,14 @@ app.post('/users', (req, res) => {
 });
 ```
 
-- [ ] **PUT 라우트** - 사용자 정보 업데이트:
+- [x] **PUT 라우트** - 사용자 정보 업데이트:
 ```javascript
 app.put('/users/:id', (req, res) => {
   res.json({ message: `사용자 ${req.params.id} 업데이트` });
 });
 ```
 
-- [ ] **DELETE 라우트** - 사용자 삭제:
+- [x] **DELETE 라우트** - 사용자 삭제:
 ```javascript
 app.delete('/users/:id', (req, res) => {
   res.json({ message: `사용자 ${req.params.id} 삭제` });
@@ -52,7 +52,7 @@ app.delete('/users/:id', (req, res) => {
 
 ### 3단계: 매개변수와 쿼리 처리
 
-- [ ] **URL 매개변수** - 특정 사용자 조회:
+- [x] **URL 매개변수** - 특정 사용자 조회:
 ```javascript
 // URL 매개변수
 app.get('/users/:id', (req, res) => {
@@ -61,7 +61,7 @@ app.get('/users/:id', (req, res) => {
 });
 ```
 
-- [ ] **쿼리 문자열** - 검색 기능:
+- [x] **쿼리 문자열** - 검색 기능:
 ```javascript
 // 쿼리 문자열 - /search?q=express&limit=10
 app.get('/search', (req, res) => {
@@ -70,7 +70,7 @@ app.get('/search', (req, res) => {
 });
 ```
 
-- [ ] **여러 매개변수** - 중첩 리소스:
+- [x] **여러 매개변수** - 중첩 리소스:
 ```javascript
 // 여러 매개변수
 app.get('/users/:userId/posts/:postId', (req, res) => {
@@ -80,12 +80,12 @@ app.get('/users/:userId/posts/:postId', (req, res) => {
 ```
 
 ### 4단계: 서버 실행 및 기본 테스트
-- [ ] 서버 실행:
+- [x] 서버 실행:
 ```bash
 npm run dev
 ```
 
-- [ ] 브라우저에서 기본 GET 라우트 테스트:
+- [x] 브라우저에서 기본 GET 라우트 테스트:
   - `http://localhost:3000/users` - 사용자 목록
   - `http://localhost:3000/users/123` - 특정 사용자
   - `http://localhost:3000/search?q=express&limit=5` - 검색
@@ -93,24 +93,24 @@ npm run dev
 ### 5단계: Postman으로 API 테스트
 
 #### GET 요청 테스트
-- [ ] **사용자 목록 조회**:
+- [x] **사용자 목록 조회**:
   - Method: `GET`
   - URL: `http://localhost:3000/users`
 
-- [ ] **특정 사용자 조회**:
+- [x] **특정 사용자 조회**:
   - Method: `GET` 
   - URL: `http://localhost:3000/users/123`
 
-- [ ] **검색 API 테스트**:
+- [x] **검색 API 테스트**:
   - Method: `GET`
   - URL: `http://localhost:3000/search?q=express&limit=5`
 
-- [ ] **중첩 리소스 테스트**:
+- [x] **중첩 리소스 테스트**:
   - Method: `GET`
   - URL: `http://localhost:3000/users/123/posts/456`
 
 #### POST 요청 테스트
-- [ ] **사용자 생성 테스트**:
+- [x] **사용자 생성 테스트**:
   - Method: `POST`
   - URL: `http://localhost:3000/users`
   - Headers: `Content-Type: application/json`
@@ -123,12 +123,12 @@ npm run dev
     ```
 
 #### PUT 요청 테스트
-- [ ] **사용자 정보 업데이트**:
+- [x] **사용자 정보 업데이트**:
   - Method: `PUT`
   - URL: `http://localhost:3000/users/123`
 
 #### DELETE 요청 테스트
-- [ ] **사용자 삭제**:
+- [x] **사용자 삭제**:
   - Method: `DELETE`
   - URL: `http://localhost:3000/users/123`
 
@@ -162,11 +162,11 @@ npm run dev
 - **중요**: `express.json()` 미들웨어 필요
 
 ## ✅ 완료 확인사항
-- [ ] 모든 HTTP 메서드 라우트가 정상 동작하는가?
-- [ ] URL 매개변수가 올바르게 추출되는가?
-- [ ] 쿼리 문자열이 정상 처리되는가?
-- [ ] POST 요청의 JSON 데이터가 올바르게 파싱되는가?
-- [ ] Postman에서 모든 API 테스트가 성공하는가?
+- [x] 모든 HTTP 메서드 라우트가 정상 동작하는가?
+- [x] URL 매개변수가 올바르게 추출되는가?
+- [x] 쿼리 문자열이 정상 처리되는가?
+- [x] POST 요청의 JSON 데이터가 올바르게 파싱되는가?
+- [x] Postman에서 모든 API 테스트가 성공하는가?
 
 ## 🚀 다음 단계
 다양한 라우팅 방법을 익혔다면, 이제 미들웨어를 활용한 고급 기능과 에러 처리를 학습해보세요!
