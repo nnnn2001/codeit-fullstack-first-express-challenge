@@ -13,27 +13,27 @@ Express 프레임워크를 배우기 위한 기본 환경 설정을 단계별로
 
 ### 1단계: 프로젝트 초기 설정
 
-- [ ] npm 프로젝트 초기화
+- [x] npm 프로젝트 초기화
 
   ```bash
   npm init -y
   ```
 
-- [ ] Express 설치
+- [x] Express 설치
   ```bash
   npm install express
   ```
 
 ### 2단계: 개발 도구 설치
 
-- [ ] 코드 포매팅 및 린팅 도구 설치
+- [x] 코드 포매팅 및 린팅 도구 설치
   ```bash
   npm install -D prettier eslint @eslint/js
   ```
 
 ### 3단계: ESLint 설정
 
-- [ ] `eslint.config.js` 파일 생성 및 설정
+- [x] `eslint.config.js` 파일 생성 및 설정
 
   ```javascript
   import js from "@eslint/js";
@@ -63,11 +63,11 @@ Express 프레임워크를 배우기 위한 기본 환경 설정을 단계별로
 
 ### 4단계: package.json 수정
 
-- [ ] `package.json` 파일에서 `"main"` 항목을 `"src/server.js"`로 변경
+- [x] `package.json` 파일에서 `"main"` 항목을 `"src/server.js"`로 변경
 
-- [ ] `"type": "module"` 추가 (ES6 import/export 문법 사용을 위해)
+- [x] `"type": "module"` 추가 (ES6 import/export 문법 사용을 위해)
 
-- [ ] `scripts` 섹션에 강의에서 배운 개발 스크립트들 추가:
+- [x] `scripts` 섹션에 강의에서 배운 개발 스크립트들 추가:
 
   ```json
   "scripts": {
@@ -77,9 +77,9 @@ Express 프레임워크를 배우기 위한 기본 환경 설정을 단계별로
   }
   ```
 
-- [ ] `keywords` 배열에 `"express"` 추가
+- [x] `keywords` 배열에 `"express"` 추가
 
-- [ ] `author` 정보를 본인 정보로 수정:
+- [x] `author` 정보를 본인 정보로 수정:
 
   ```json
   "author": {
@@ -88,9 +88,9 @@ Express 프레임워크를 배우기 위한 기본 환경 설정을 단계별로
   }
   ```
 
-- [ ] `description` 항목을 `적고 싶은 내용`을 추가
+- [x] `description` 항목을 `적고 싶은 내용`을 추가
 
-- [ ] `engines` 섹션 추가 (Node.js와 npm 버전 명시):
+- [x] `engines` 섹션 추가 (Node.js와 npm 버전 명시):
   ```json
   "engines": {
     "node": "^22.14.0",
@@ -100,19 +100,19 @@ Express 프레임워크를 배우기 위한 기본 환경 설정을 단계별로
 
 ### 5단계: 서버 파일 생성
 
-- [ ] `src` 폴더 생성
+- [x] `src` 폴더 생성
 
   ```bash
   mkdir src
   ```
 
-- [ ] `src/server.js` 파일 생성 및 기본 코드 작성
+- [x] `src/server.js` 파일 생성 및 기본 코드 작성
 
   ```javascript
   console.log("hello world");
   ```
 
-- [ ] 서버 실행 테스트
+- [x] 서버 실행 테스트
   ```bash
   npm run dev
   ```
@@ -121,10 +121,10 @@ Express 프레임워크를 배우기 위한 기본 환경 설정을 단계별로
 
 설정이 모두 완료되면 다음을 확인해주세요:
 
-- [ ] `node_modules` 폴더가 생성되었는가?
-- [ ] `package-lock.json` 파일이 생성되었는가?
-- [ ] `npm run dev` 실행 시 "hello world"가 콘솔에 출력되는가?
-- [ ] 프로젝트 구조가 다음과 같은가?
+- [x] `node_modules` 폴더가 생성되었는가?
+- [x] `package-lock.json` 파일이 생성되었는가?
+- [x] `npm run dev` 실행 시 "hello world"가 콘솔에 출력되는가?
+- [x] 프로젝트 구조가 다음과 같은가?
   ```
   01-basic-setup/
   ├── node_modules/

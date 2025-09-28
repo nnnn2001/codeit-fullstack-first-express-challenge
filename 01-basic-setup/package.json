@@ -1,0 +1,40 @@
+{
+  "name": "codeit-fullstack-first-express-challenge",
+  "version": "1.0.0",
+  "description": "Express 프로젝트의 기본 구조 이해",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "node src/server.js",
+    "format": "prettier --write src/**/*.js",
+    "format:check": "prettier --check src/**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nnnn2001/codeit-fullstack-first-express-challenge.git"
+  },
+  "keywords": [
+    "express"
+  ],
+  "author": {
+    "name": "nnnn",
+    "email": "hee2ees2@gmail.com"
+  },
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/nnnn2001/codeit-fullstack-first-express-challenge/issues"
+  },
+  "homepage": "https://github.com/nnnn2001/codeit-fullstack-first-express-challenge#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.36.0",
+    "eslint": "^9.36.0",
+    "prettier": "^3.6.2"
+  },
+  "engines": {
+    "node": "^22.14.0",
+    "npm": "^10.9.2"
+  }
+}
