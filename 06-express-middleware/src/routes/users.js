@@ -1,4 +1,5 @@
 import express from 'express';
+import { validateUser } from '../middlewares/validateUser.js';
 
 export const userRouter = express.Router();
 
@@ -50,15 +51,8 @@ userRouter.get('/users/:id', (req, res) => {
 });
 
 // POST /api/v1/users - 새 사용자 생성
-userRouter.post('/users', (req, res) => {
+userRouter.post('/', validateUser, (req, res) => {
   const { name, email } = req.body;
-
-  if (!name || !email) {
-    return res.status(400).json({
-      success: false,
-      message: '이름과 이메일은 필수입니다',
-    });
-  }
 
   const newUser = {
     id: nextId++,
@@ -76,7 +70,7 @@ userRouter.post('/users', (req, res) => {
 });
 
 // PUT /api/v1/users/:id - 사용자 정보 업데이트
-userRouter.patch('/users/:id', (req, res) => {
+userRouter.patch('/users/:id', validateUser, (req, res) => {
   const id = parseInt(req.params.id);
   const { name, email } = req.body;
 

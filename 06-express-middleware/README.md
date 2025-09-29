@@ -10,14 +10,14 @@ Express 미들웨어를 만들어 로깅, 검증, CORS 등의 기능을 구현�
 ## 📋 실습 체크리스트
 
 ### 실습 1: 사전 준비
-- [ ] 05-express-crud 코드를 복사하여 06-express-middleware 폴더에 붙여넣기
-- [ ] `src/middlewares` 폴더 생성
-- [ ] `public` 폴더 생성 (정적 파일용)
+- [x] 05-express-crud 코드를 복사하여 06-express-middleware 폴더에 붙여넣기
+- [x] `src/middlewares` 폴더 생성
+- [x] `public` 폴더 생성 (정적 파일용)
 
 ### 실습 2: Express 기본 미들웨어 설정
 
 #### 단계 1: server.js 미들웨어 설정
-- [ ] `src/server.js`에서 기본 미들웨어들 추가:
+- [x] `src/server.js`에서 기본 미들웨어들 추가:
 
 ```javascript
 import express from 'express';
@@ -45,7 +45,7 @@ app.listen(PORT, () => {
 ```
 
 #### 단계 2: 정적 파일 테스트
-- [ ] `public/test.html` 파일 생성:
+- [x] `public/test.html` 파일 생성:
 
 ```html
 <!DOCTYPE html>
@@ -63,7 +63,7 @@ app.listen(PORT, () => {
 ### 실습 3: 로깅 미들웨어
 
 #### 단계 1: 로깅 미들웨어 생성
-- [ ] `src/middlewares/logger.js` 파일 생성:
+- [x] `src/middlewares/logger.js` 파일 생성:
 
 ```javascript
 // 로깅 미들웨어
@@ -75,7 +75,7 @@ export const logger = (req, res, next) => {
 ```
 
 #### 단계 2: server.js에 적용
-- [ ] `src/server.js`에서 로깅 미들웨어 import 및 적용:
+- [x] `src/server.js`에서 로깅 미들웨어 import 및 적용:
 
 ```javascript
 import { logger } from './middlewares/logger.js';
@@ -107,7 +107,7 @@ export const requestTimer = (req, res, next) => {
 ```
 
 #### 단계 2: server.js에 적용
-- [ ] `src/server.js`에 타이머 미들웨어 추가:
+- [x] `src/server.js`에 타이머 미들웨어 추가:
 
 ```javascript
 import { requestTimer } from './middlewares/requestTimer.js';
@@ -122,7 +122,7 @@ app.use(requestTimer);
 ### 실습 5: 사용자 검증 미들웨어
 
 #### 단계 1: 검증 미들웨어 생성
-- [ ] `src/middlewares/validateUser.js` 파일 생성:
+- [x] `src/middlewares/validateUser.js` 파일 생성:
 
 ```javascript
 // 사용자 데이터 검증 미들웨어
@@ -149,7 +149,7 @@ export const validateUser = (req, res, next) => {
 ```
 
 #### 단계 2: 특정 라우트에 적용
-- [ ] `src/routes/users.js`에서 POST, PATCH 라우트에 검증 미들웨어 적용:
+- [x] `src/routes/users.js`에서 POST, PATCH 라우트에 검증 미들웨어 적용:
 
 ```javascript
 import { validateUser } from '../middlewares/validateUser.js';
@@ -168,7 +168,7 @@ userRouter.patch('/:id', validateUser, (req, res) => {
 ### 실습 6: CORS 미들웨어
 
 #### 단계 1: CORS 미들웨어 생성
-- [ ] `src/middlewares/cors.js` 파일 생성:
+- [x] `src/middlewares/cors.js` 파일 생성:
 
 ```javascript
 // CORS 미들웨어
@@ -213,13 +213,13 @@ app.use(requestTimer);
 ### 실습 7: 테스트
 
 #### 서버 실행 및 확인
-- [ ] 서버 실행: `npm run dev`
-- [ ] 브라우저에서 `http://localhost:5001/test.html` 접속하여 정적 파일 서비스 확인
-- [ ] 콘솔에서 로깅 및 타이머 출력 확인
-- [ ] Postman으로 다음 테스트:
-  - [ ] 올바른 데이터로 사용자 생성
-  - [ ] 잘못된 이름으로 사용자 생성 (1글자)
-  - [ ] 잘못된 이메일로 사용자 생성
+- [x] 서버 실행: `npm run dev`
+- [x] 브라우저에서 `http://localhost:5001/test.html` 접속하여 정적 파일 서비스 확인
+- [x] 콘솔에서 로깅 및 타이머 출력 확인
+- [x] Postman으로 다음 테스트:
+  - [x] 올바른 데이터로 사용자 생성
+  - [x] 잘못된 이름으로 사용자 생성 (1글자)
+  - [x] 잘못된 이메일로 사용자 생성
   - [ ] CORS 헤더가 응답에 포함되는지 확인
 
 ## 📚 미들웨어 실행 순서
@@ -229,10 +229,10 @@ app.use(requestTimer);
 ```
 
 ## ✅ 완료 확인사항
-- [ ] 정적 파일(test.html)이 브라우저에서 정상 표시되는가?
-- [ ] 모든 요청이 콘솔에 로깅되는가?
-- [ ] 요청 처리 시간이 출력되는가?
-- [ ] 유효성 검증이 미들웨어에서 처리되는가?
+- [x] 정적 파일(test.html)이 브라우저에서 정상 표시되는가?
+- [x] 모든 요청이 콘솔에 로깅되는가?
+- [x] 요청 처리 시간이 출력되는가?
+- [x] 유효성 검증이 미들웨어에서 처리되는가?
 - [ ] CORS 헤더가 응답에 포함되는가?
 
 ## 💡 미들웨어 핵심 개념
