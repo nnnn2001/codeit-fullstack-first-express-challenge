@@ -25,7 +25,7 @@ src/
 
 ### 1단계: 이전 단계 완료 확인
 
-- [ ] 03-express-routing이 완료되어 다음 코드가 `src/server.js`에 있는지 확인:
+- [x] 03-express-routing이 완료되어 다음 코드가 `src/server.js`에 있는지 확인:
 
 ```javascript
 // 현재 server.js에 모든 라우트가 한 파일에 있는 상태
@@ -35,7 +35,7 @@ import express from "express";
 
 ### 2단계: 폴더 구조 생성
 
-- [ ] `src` 폴더 내에 라우트 폴더를 생성:
+- [x] `src` 폴더 내에 라우트 폴더를 생성:
 
 ```bash
 mkdir -p src/routes
@@ -43,7 +43,7 @@ mkdir -p src/routes
 
 ### 3단계: 사용자 라우트 분리
 
-- [ ] `src/routes/users.js` 파일 생성:
+- [x] `src/routes/users.js` 파일 생성:
 
 ```javascript
 import express from "express";
@@ -86,7 +86,7 @@ userRouter.get("/:userId/posts/:postId", (req, res) => {
 
 ### 4단계: 검색 라우트 분리
 
-- [ ] `src/routes/search.js` 파일 생성:
+- [x] `src/routes/search.js` 파일 생성:
 
 ```javascript
 import express from "express";
@@ -102,7 +102,7 @@ searchRouter.get("/", (req, res) => {
 
 ### 5단계: 메인 라우터 생성
 
-- [ ] `src/routes/index.js` 파일 생성:
+- [x] `src/routes/index.js` 파일 생성:
 
 ```javascript
 import express from 'express';
@@ -126,7 +126,7 @@ router.use('/search', searchRouter);
 
 ### 6단계: 메인 서버 파일 수정
 
-- [ ] `src/server.js` 파일을 다음과 같이 수정:
+- [x] `src/server.js` 파일을 다음과 같이 수정:
 
 ```javascript
 import express from "express";
@@ -149,13 +149,13 @@ app.listen(PORT, () => {
 
 ### 7단계: 테스트 및 검증
 
-- [ ] 서버 실행:
+- [x] 서버 실행:
 
 ```bash
 npm run dev
 ```
 
-- [ ] 모든 API 엔드포인트가 새로운 경로에서 동작하는지 확인:
+- [x] 모든 API 엔드포인트가 새로운 경로에서 동작하는지 확인:
   - `GET /` - 기본 라우트
   - `GET /users` - 사용자 목록 조회
   - `GET /users/:id` - 특정 사용자 조회
@@ -167,22 +167,22 @@ npm run dev
 
 ### 8단계: Postman으로 API 테스트
 
-- [ ] **기본 라우트**:
+- [x] **기본 라우트**:
 
   - Method: `GET`
   - URL: `http://localhost:3000/`
 
-- [ ] **사용자 목록 조회**:
+- [x] **사용자 목록 조회**:
 
   - Method: `GET`
   - URL: `http://localhost:3000/users`
 
-- [ ] **특정 사용자 조회**:
+- [x] **특정 사용자 조회**:
 
   - Method: `GET`
   - URL: `http://localhost:3000/users/123`
 
-- [ ] **사용자 생성**:
+- [x] **사용자 생성**:
 
   - Method: `POST`
   - URL: `http://localhost:3000/users`
@@ -195,22 +195,22 @@ npm run dev
     }
     ```
 
-- [ ] **사용자 정보 업데이트**:
+- [x] **사용자 정보 업데이트**:
 
   - Method: `PUT`
   - URL: `http://localhost:3000/users/123`
 
-- [ ] **사용자 삭제**:
+- [x] **사용자 삭제**:
 
   - Method: `DELETE`
   - URL: `http://localhost:3000/users/123`
 
-- [ ] **검색**:
+- [x] **검색**:
 
   - Method: `GET`
   - URL: `http://localhost:3000/search?q=express&limit=5`
 
-- [ ] **중첩 리소스**:
+- [x] **중첩 리소스**:
   - Method: `GET`
   - URL: `http://localhost:3000/users/123/posts/456`
 
@@ -243,11 +243,11 @@ npm run dev
 
 ## ✅ 완료 확인사항
 
-- [ ] `routes/` 폴더 구조가 올바르게 생성되었는가?
-- [ ] 사용자 라우트와 검색 라우트가 분리되었는가?
-- [ ] 모든 API가 올바른 경로에서 동작하는가?
-- [ ] named export를 사용하여 라우트가 명확하게 임포트되는가?
-- [ ] 기존 기능이 동일하게 작동하는가?
+- [x] `routes/` 폴더 구조가 올바르게 생성되었는가?
+- [x] 사용자 라우트와 검색 라우트가 분리되었는가?
+- [x] 모든 API가 올바른 경로에서 동작하는가?
+- [x] named export를 사용하여 라우트가 명확하게 임포트되는가?
+- [x] 기존 기능이 동일하게 작동하는가?
 
 ## 🚀 다음 단계
 
