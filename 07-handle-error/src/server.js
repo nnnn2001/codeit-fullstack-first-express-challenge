@@ -3,6 +3,7 @@ import { router } from './routes/index.js';
 import { logger } from './middlewares/logger.js';
 import { requestTimer } from './middlewares/requestTImer.js';
 import { cors } from './middlewares/cors.js';
+import { errorHandler } from './middlewares/errorHandler.js';
 
 const app = express();
 const PORT = 5001;
@@ -23,6 +24,10 @@ app.use('/', router);
 
 // 정적 파일 제공
 app.use(express.static('public'));
+
+
+//에러 핸들링, 반드시 마지막에!!!!!!!!!!!!!!!!!!
+app.use(errorHandler)
 
 // 서버 시작
 app.listen(PORT, () => {

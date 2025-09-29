@@ -11,13 +11,13 @@ Express에서 체계적인 에러 처리를 위한 커스텀 예외 클래스와
 ## 📋 실습 체크리스트
 
 ### 실습 1: 사전 준비
-- [ ] 06-express-middleware 코드를 복사하여 07-handle-error 폴더에 붙여넣기
-- [ ] `src/errors` 폴더 생성
+- [x] 06-express-middleware 코드를 복사하여 07-handle-error 폴더에 붙여넣기
+- [x] `src/errors` 폴더 생성
 
 ### 실습 2: 기본 예외 클래스 생성
 
 #### 단계 1: HttpException 기본 클래스
-- [ ] `src/errors/httpException.js` 파일 생성:
+- [x] `src/errors/httpException.js` 파일 생성:
 
 ```javascript
 export class HttpException extends Error {
@@ -33,7 +33,7 @@ export class HttpException extends Error {
 ### 실습 3: 구체적인 예외 클래스들 생성
 
 #### 단계 1: BadRequestException (400)
-- [ ] `src/errors/badRequestException.js` 파일 생성:
+- [x] `src/errors/badRequestException.js` 파일 생성:
 
 ```javascript
 import { HttpException } from './httpException.js';
@@ -46,7 +46,7 @@ export class BadRequestException extends HttpException {
 ```
 
 #### 단계 2: UnauthorizedException (401)
-- [ ] `src/errors/unauthorizedException.js` 파일 생성:
+- [x] `src/errors/unauthorizedException.js` 파일 생성:
 
 ```javascript
 import { HttpException } from './httpException.js';
@@ -59,7 +59,7 @@ export class UnauthorizedException extends HttpException {
 ```
 
 #### 단계 3: ForbiddenException (403)
-- [ ] `src/errors/forbiddenException.js` 파일 생성:
+- [x] `src/errors/forbiddenException.js` 파일 생성:
 
 ```javascript
 import { HttpException } from './httpException.js';
@@ -72,7 +72,7 @@ export class ForbiddenException extends HttpException {
 ```
 
 #### 단계 4: NotFoundException (404)
-- [ ] `src/errors/notFoundException.js` 파일 생성:
+- [x] `src/errors/notFoundException.js` 파일 생성:
 
 ```javascript
 import { HttpException } from './httpException.js';
@@ -85,7 +85,7 @@ export class NotFoundException extends HttpException {
 ```
 
 #### 단계 5: ConflictException (409)
-- [ ] `src/errors/conflictException.js` 파일 생성:
+- [x] `src/errors/conflictException.js` 파일 생성:
 
 ```javascript
 import { HttpException } from './httpException.js';
@@ -100,7 +100,7 @@ export class ConflictException extends HttpException {
 ### 실습 4: 에러 핸들링 미들웨어 생성
 
 #### 단계 1: 에러 핸들러 미들웨어
-- [ ] `src/middlewares/errorHandler.js` 파일 생성:
+- [x] `src/middlewares/errorHandler.js` 파일 생성:
 
 ```javascript
 import { HttpException } from '../errors/httpException.js';
@@ -126,7 +126,7 @@ export const errorHandler = (error, req, res, _next) => {
 ### 실습 5: ESLint 규칙 수정
 
 #### 단계 1: .eslintrc.json 수정
-- [ ] `.eslintrc.json` 파일에서 unused-vars 규칙 수정:
+- [x] `.eslintrc.json` 파일에서 unused-vars 규칙 수정:
 
 ```json
 {
@@ -139,7 +139,7 @@ export const errorHandler = (error, req, res, _next) => {
 ### 실습 6: server.js에 에러 핸들러 적용
 
 #### 단계 1: 에러 핸들러 등록
-- [ ] `src/server.js`에서 에러 핸들러를 **가장 마지막**에 등록:
+- [x] `src/server.js`에서 에러 핸들러를 **가장 마지막**에 등록:
 
 ```javascript
 import express from 'express';
@@ -186,7 +186,7 @@ import { ConflictException } from '../errors/conflictException.js';
 ```
 
 #### 단계 2: GET /:id 라우트 수정
-- [ ] 특정 사용자 조회 라우트에 try-catch 적용:
+- [x] 특정 사용자 조회 라우트에 try-catch 적용:
 
 ```javascript
 // 특정 사용자 조회
@@ -210,7 +210,7 @@ userRouter.get('/:id', (req, res, next) => {
 ```
 
 #### 단계 3: POST / 라우트 수정
-- [ ] 사용자 생성 라우트에 try-catch 적용:
+- [x] 사용자 생성 라우트에 try-catch 적용:
 
 ```javascript
 // 사용자 생성
@@ -245,7 +245,7 @@ userRouter.post('/', validateUser, (req, res, next) => {
 ```
 
 #### 단계 4: PATCH /:id 라우트 수정
-- [ ] 사용자 수정 라우트에 try-catch 적용:
+- [x] 사용자 수정 라우트에 try-catch 적용:
 
 ```javascript
 // 사용자 정보 수정
@@ -285,7 +285,7 @@ userRouter.patch('/:id', validateUser, (req, res, next) => {
 ```
 
 #### 단계 5: DELETE /:id 라우트 수정
-- [ ] 사용자 삭제 라우트에 try-catch 적용:
+- [x] 사용자 삭제 라우트에 try-catch 적용:
 
 ```javascript
 // 사용자 삭제
@@ -315,7 +315,7 @@ userRouter.delete('/:id', (req, res, next) => {
 ### 실습 8: 검증 미들웨어 수정
 
 #### 단계 1: validateUser.js 수정
-- [ ] `src/middlewares/validateUser.js`에서 예외 throw 방식으로 변경:
+- [x] `src/middlewares/validateUser.js`에서 예외 throw 방식으로 변경:
 
 ```javascript
 import { BadRequestException } from '../errors/badRequestException.js';
@@ -343,14 +343,14 @@ export const validateUser = (req, res, next) => {
 ### 실습 9: 테스트
 
 #### 서버 실행 및 확인
-- [ ] 서버 실행: `npm run dev`
-- [ ] Postman으로 다음 에러 상황 테스트:
-  - [ ] 존재하지 않는 사용자 조회 (404)
-  - [ ] 잘못된 이름으로 사용자 생성 (400)
-  - [ ] 잘못된 이메일로 사용자 생성 (400)
-  - [ ] 중복 이메일로 사용자 생성 (409)
-  - [ ] 존재하지 않는 사용자 수정 (404)
-  - [ ] 존재하지 않는 사용자 삭제 (404)
+- [x] 서버 실행: `npm run dev`
+- [x] Postman으로 다음 에러 상황 테스트:
+  - [x] 존재하지 않는 사용자 조회 (404)
+  - [x] 잘못된 이름으로 사용자 생성 (400)
+  - [x] 잘못된 이메일로 사용자 생성 (400)
+  - [x] 중복 이메일로 사용자 생성 (409)
+  - [x] 존재하지 않는 사용자 수정 (404)
+  - [x] 존재하지 않는 사용자 삭제 (404)
 
 ## 📚 에러 처리 핵심 개념
 
@@ -370,11 +370,11 @@ export const validateUser = (req, res, next) => {
 | 500 | - | 서버 내부 오류 |
 
 ## ✅ 완료 확인사항
-- [ ] 모든 에러가 일관된 형태로 응답되는가?
-- [ ] 적절한 HTTP 상태 코드가 반환되는가?
-- [ ] 콘솔에 에러 로그가 출력되는가?
-- [ ] try-catch로 모든 라우트가 감싸져 있는가?
-- [ ] 미들웨어에서 예외가 올바르게 처리되는가?
+- [x] 모든 에러가 일관된 형태로 응답되는가?
+- [x] 적절한 HTTP 상태 코드가 반환되는가?
+- [x] 콘솔에 에러 로그가 출력되는가?
+- [x] try-catch로 모든 라우트가 감싸져 있는가?
+- [x] 미들웨어에서 예외가 올바르게 처리되는가?
 
 ## 💡 에러 처리 모범 사례
 - **일관성**: 모든 에러를 동일한 구조로 응답
