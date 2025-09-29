@@ -22,13 +22,13 @@ Express를 사용하여 완전한 CRUD(Create, Read, Update, Delete) 연산과 R
 ## 📋 실습 체크리스트
 
 ### 실습 1: 사전 준비 확인
-- [ ] 04-route-separation이 완료되어 Express 서버가 정상 동작하는지 확인
-- [ ] `http://localhost:5001/users` 접속하여 기본 라우트가 작동하는지 확인
+- [x] 04-route-separation이 완료되어 Express 서버가 정상 동작하는지 확인
+- [x] `http://localhost:5001/users` 접속하여 기본 라우트가 작동하는지 확인
 
 ### 실습 2: REST API 만들기
 
 #### 단계 1: 메모리 데이터베이스 준비
-- [ ] `src/routes/users.js` 파일 상단에 다음 코드를 추가하세요:
+- [x] `src/routes/users.js` 파일 상단에 다음 코드를 추가하세요:
 
 ```javascript
 import express from 'express';
@@ -60,7 +60,7 @@ const nextId = 16;
 #### 단계 2: CRUD 라우트 구현
 
 ##### 📖 READ - 모든 사용자 조회
-- [ ] 기존의 `userRouter.get('/', ...)` 라우트를 다음과 같이 수정하세요:
+- [x] 기존의 `userRouter.get('/', ...)` 라우트를 다음과 같이 수정하세요:
 
 ```javascript
 // 모든 사용자 조회
@@ -74,7 +74,7 @@ userRouter.get('/', (req, res) => {
 ```
 
 ##### 📖 READ - 특정 사용자 조회  
-- [ ] 기존의 `userRouter.get('/:id', ...)` 라우트를 다음과 같이 수정하세요:
+- [x] 기존의 `userRouter.get('/:id', ...)` 라우트를 다음과 같이 수정하세요:
 
 ```javascript
 // 특정 사용자 조회
@@ -97,7 +97,7 @@ userRouter.get('/:id', (req, res) => {
 ```
 
 ##### ➕ CREATE - 새 사용자 생성
-- [ ] 기존의 `userRouter.post('/', ...)` 라우트를 다음과 같이 수정하세요:
+- [x] 기존의 `userRouter.post('/', ...)` 라우트를 다음과 같이 수정하세요:
 
 ```javascript
 // 사용자 생성
@@ -139,7 +139,7 @@ userRouter.post('/', (req, res) => {
 ```
 
 ##### ✏️ UPDATE - 사용자 정보 수정 (부분 수정)
-- [ ] 기존의 `userRouter.put('/:id', ...)` 라우트를 **PATCH**로 변경하고 다음과 같이 수정하세요:
+- [x] 기존의 `userRouter.put('/:id', ...)` 라우트를 **PATCH**로 변경하고 다음과 같이 수정하세요:
 
 ```javascript
 // 사용자 정보 수정 (부분 수정 - 이름 또는 이메일)
@@ -189,7 +189,7 @@ userRouter.patch('/:id', (req, res) => {
 ```
 
 ##### 🗑️ DELETE - 사용자 삭제
-- [ ] 기존의 `userRouter.delete('/:id', ...)` 라우트를 다음과 같이 수정하세요:
+- [x] 기존의 `userRouter.delete('/:id', ...)` 라우트를 다음과 같이 수정하세요:
 
 ```javascript
 // 사용자 삭제
@@ -218,35 +218,35 @@ userRouter.delete('/:id', (req, res) => {
 ### 실습 3: 서버 실행 및 테스트
 
 #### 기본 테스트
-- [ ] 서버 실행:
+- [x] 서버 실행:
 ```bash
 npm run dev
 ```
 
-- [ ] 브라우저에서 기본 테스트:
+- [x] 브라우저에서 기본 테스트:
   - `http://localhost:5001/` - 기본 라우트 확인
   - `http://localhost:5001/users` - 모든 사용자 조회
 
 ### 실습 4: Postman으로 CRUD 테스트
 
 #### 📖 READ 테스트
-- [ ] **모든 사용자 조회**:
+- [x] **모든 사용자 조회**:
   - Method: `GET`
   - URL: `http://localhost:5001/users`
   - 예상 응답: 상태 코드 200, 사용자 목록
 
-- [ ] **특정 사용자 조회**:
+- [x] **특정 사용자 조회**:
   - Method: `GET`  
   - URL: `http://localhost:5001/users/1`
   - 예상 응답: 상태 코드 200, 김철수 정보
 
-- [ ] **존재하지 않는 사용자 조회**:
+- [x] **존재하지 않는 사용자 조회**:
   - Method: `GET`
   - URL: `http://localhost:5001/users/999`
   - 예상 응답: 상태 코드 404, 에러 메시지
 
 #### ➕ CREATE 테스트
-- [ ] **새 사용자 생성 (성공)**:
+- [x] **새 사용자 생성 (성공)**:
   - Method: `POST`
   - URL: `http://localhost:5001/users`
   - Headers: `Content-Type: application/json`
@@ -259,7 +259,7 @@ npm run dev
     ```
   - 예상 응답: 상태 코드 201, 생성된 사용자 정보
 
-- [ ] **필수 필드 누락 테스트**:
+- [x] **필수 필드 누락 테스트**:
   - Method: `POST`
   - URL: `http://localhost:5001/users`
   - Body:
@@ -270,7 +270,7 @@ npm run dev
     ```
   - 예상 응답: 상태 코드 400, 에러 메시지
 
-- [ ] **이메일 중복 테스트**:
+- [x] **이메일 중복 테스트**:
   - Method: `POST`
   - URL: `http://localhost:5001/users`
   - Body:
@@ -283,7 +283,7 @@ npm run dev
   - 예상 응답: 상태 코드 409, 중복 에러 메시지
 
 #### ✏️ UPDATE 테스트
-- [ ] **사용자 이름만 수정 (성공)**:
+- [x] **사용자 이름만 수정 (성공)**:
   - Method: `PATCH`
   - URL: `http://localhost:5001/users/1`  
   - Body:
@@ -294,7 +294,7 @@ npm run dev
     ```
   - 예상 응답: 상태 코드 200, 수정된 사용자 정보
 
-- [ ] **사용자 이메일만 수정 (성공)**:
+- [x] **사용자 이메일만 수정 (성공)**:
   - Method: `PATCH`
   - URL: `http://localhost:5001/users/1`
   - Body:
@@ -305,7 +305,7 @@ npm run dev
     ```
   - 예상 응답: 상태 코드 200, 수정된 사용자 정보
 
-- [ ] **이름과 이메일 둘 다 수정 (성공)**:
+- [x] **이름과 이메일 둘 다 수정 (성공)**:
   - Method: `PATCH`
   - URL: `http://localhost:5001/users/1`
   - Body:
@@ -317,7 +317,7 @@ npm run dev
     ```
   - 예상 응답: 상태 코드 200, 수정된 사용자 정보
 
-- [ ] **수정할 정보 없이 요청**:
+- [x] **수정할 정보 없이 요청**:
   - Method: `PATCH`
   - URL: `http://localhost:5001/users/1`
   - Body: `{}`
@@ -334,24 +334,24 @@ npm run dev
     ```
   - 예상 응답: 상태 코드 409, 중복 에러 메시지
 
-- [ ] **존재하지 않는 사용자 수정**:
+- [x] **존재하지 않는 사용자 수정**:
   - Method: `PATCH`
   - URL: `http://localhost:5001/users/999`
   - Body: `{"name": "test"}`
   - 예상 응답: 상태 코드 404, 에러 메시지
 
 #### 🗑️ DELETE 테스트
-- [ ] **사용자 삭제 (성공)**:
+- [x] **사용자 삭제 (성공)**:
   - Method: `DELETE`
   - URL: `http://localhost:5001/users/2`
   - 예상 응답: 상태 코드 200, 삭제 성공 메시지
 
-- [ ] **존재하지 않는 사용자 삭제**:
+- [x] **존재하지 않는 사용자 삭제**:
   - Method: `DELETE`
   - URL: `http://localhost:5001/users/999`
   - 예상 응답: 상태 코드 404, 에러 메시지
 
-- [ ] **삭제 후 조회 테스트**:
+- [x] **삭제 후 조회 테스트**:
   - Method: `GET`
   - URL: `http://localhost:5001/users`
   - 확인: 삭제된 사용자가 목록에 없는지 확인
@@ -385,12 +385,12 @@ npm run dev
 - 이 실습에서는 이름만 수정 가능하므로 **PATCH** 사용
 
 ## ✅ 완료 확인사항
-- [ ] 모든 CRUD 연산이 정상 동작하는가?
-- [ ] 적절한 HTTP 상태 코드가 반환되는가?
-- [ ] 에러 상황이 올바르게 처리되는가?
-- [ ] 유효성 검증이 작동하는가?
-- [ ] 이메일 중복 검사가 작동하는가?
-- [ ] Postman 테스트가 모두 통과하는가?
+- [x] 모든 CRUD 연산이 정상 동작하는가?
+- [x] 적절한 HTTP 상태 코드가 반환되는가?
+- [x] 에러 상황이 올바르게 처리되는가?
+- [x] 유효성 검증이 작동하는가?
+- [x] 이메일 중복 검사가 작동하는가?
+- [x] Postman 테스트가 모두 통과하는가?
 
 ## 🚀 다음 단계
 CRUD API 구현을 완료했다면, 이제 데이터베이스 연동, 인증/권한, 미들웨어 등 고급 기능을 학습해보세요!
