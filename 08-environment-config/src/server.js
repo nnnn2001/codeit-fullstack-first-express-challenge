@@ -1,4 +1,5 @@
 import express from 'express';
+import { config, isDevelopment } from './config/config.js';
 import { router } from './routes/index.js';
 import { logger } from './middlewares/logger.js';
 import { requestTimer } from './middlewares/requestTImer.js';
@@ -29,6 +30,7 @@ app.use(express.static('public'));
 app.use(errorHandler);
 
 // 서버 시작
-app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
+app.listen(config, PORT, () => {
+  console.log(`🚀 Server running on port ${config.PORT}`);
+  console.log(`📦 Environment: ${config.NODE_ENV}`);
 });

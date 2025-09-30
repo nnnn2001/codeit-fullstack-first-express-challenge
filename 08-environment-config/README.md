@@ -12,20 +12,20 @@ npm install zod
 ```
 
 ### 2. env 폴더 및 환경 파일 생성
-- [ ] `env` 폴더 생성
-- [ ] `env/.env.example` 파일 생성:
+- [x] `env` 폴더 생성
+- [x] `env/.env.example` 파일 생성:
 ```
 NODE_ENV=development
 PORT=5001
 ```
 
-- [ ] `env/.env.development` 파일 생성:
+- [x] `env/.env.development` 파일 생성:
 ```
 NODE_ENV=development
 PORT=5001
 ```
 
-- [ ] `env/.env.production` 파일 생성:
+- [x] `env/.env.production` 파일 생성:
 ```
 NODE_ENV=production
 PORT=3000
