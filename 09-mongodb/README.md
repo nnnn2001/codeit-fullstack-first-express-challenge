@@ -5,18 +5,18 @@ Express 서버에 MongoDB를 연동하여 실제 데이터베이스를 사용해
 ## 📋 실습 체크리스트
 
 ### 0단계: Mongoose 설치
-- [ ] `npm install mongoose`
+- [x] `npm install mongoose`
 
 ### 1단계: 환경변수 설정
-- [ ] `.env.development` 파일에 MongoDB URI 추가:
+- [x] `.env.development` 파일에 MongoDB URI 추가:
 ```
 NODE_ENV=development
 PORT=5001
 MONGO_URI=mongodb+srv://username:password@cluster0.xxxxx.mongodb.net/express-test?retryWrites=true&w=majority&appName=Cluster0
 ```
 
-- [ ] `.env.example` 파일도 동일하게 수정
-- [ ] `src/config/config.js`에 MONGO_URI 검증 추가:
+- [x] `.env.example` 파일도 동일하게 수정
+- [x] `src/config/config.js`에 MONGO_URI 검증 추가:
 
 ```javascript
 const envSchema = z.object({
@@ -39,7 +39,7 @@ const parseEnvironment = () => {
 ```
 
 ### 2단계: 데이터베이스 연결 설정
-- [ ] `src/db/index.js` 파일 생성:
+- [x] `src/db/index.js` 파일 생성:
 
 ```javascript
 import mongoose from 'mongoose';
@@ -60,7 +60,7 @@ export const disconnectDB = async () => {
 };
 ```
 
-- [ ] `src/server.js`에 DB 연결 및 Graceful Shutdown 추가:
+- [x] `src/server.js`에 DB 연결 및 Graceful Shutdown 추가:
 
 ```javascript
 import { connectDB, disconnectDB } from './db/index.js';
@@ -88,7 +88,7 @@ process.on('SIGTERM', () => shutdown('SIGTERM'));
 ```
 
 ### 3단계: User 모델 정의
-- [ ] `src/models/user.model.js` 파일 생성:
+- [x] `src/models/user.model.js` 파일 생성:
 
 ```javascript
 import mongoose from 'mongoose';
@@ -209,7 +209,7 @@ userRouter.delete('/:id', async (req, res, next) => {
 ```
 
 ### 5단계: 테스트
-- [ ] 서버 실행: `npm run dev`
+- [x] 서버 실행: `npm run dev`
 - [ ] Postman으로 API 테스트:
   - [ ] POST `/users` - 사용자 생성
   - [ ] GET `/users` - 전체 조회

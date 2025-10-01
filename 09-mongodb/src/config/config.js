@@ -1,8 +1,9 @@
 import { z } from 'zod';
 
 const envSchema = z.object({
-  NODE_ENV: z.enum(['development', 'production', 'test']),
-  PORT: z.coerce.number().min(1000).max(65535),
+  NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
+  PORT: z.coerce.number().min(1000).max(65535).default(5001),
+  MONGO_URL: z.string().startsWith('mongodb+srv://'),
 });
 
 const parseEnvironment = () => {
@@ -10,6 +11,7 @@ const parseEnvironment = () => {
     return envSchema.parse({
       NODE_ENV: process.env.NODE_ENV,
       PORT: process.env.PORT,
+      MONGO_URL: process.env.MONGO_URL,
     });
   } catch (error) {
     if (error instanceof z.ZodError) {
